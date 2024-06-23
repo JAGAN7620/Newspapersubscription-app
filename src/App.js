@@ -1,13 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
 import AddSubscribersPage from './components/AddSubscribersPage';
+import ViewSubscribersPage from './components/ViewSubscribersPage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import SearchSubscribersPage from './components/SearchSubscribersPage';
+import DeleteSubscribersPage from './components/DeleteSubscribersPage';
 
 function App() {
   return (
-    <div>
-     <AddSubscribersPage/>
-     
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path="/" element={<AddSubscribersPage/>}/>
+    <Route path="/view" element={<ViewSubscribersPage/>}/>
+    <Route path="/search" element={<SearchSubscribersPage/>}/>
+    <Route path="/delete" element={<DeleteSubscribersPage/>}/>
+   </Routes>
+   </BrowserRouter>
   );
 }
 
